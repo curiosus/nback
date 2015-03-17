@@ -1,0 +1,129 @@
+<LinearLayout
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:orientation="vertical">
+
+   <LinearLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_gravity="center_horizontal">
+
+       <Button android:id="@+id/btn_0"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_1"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_2"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+   </LinearLayout>
+
+   <LinearLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_gravity="center_horizontal">
+
+       <Button android:id="@+id/btn_3"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_4"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_5"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+   </LinearLayout>
+
+       <LinearLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_gravity="center_horizontal">
+
+       <Button android:id="@+id/btn_6"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_7"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+       <Button android:id="@+id/btn_8"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:layout_margin="10dp"
+               />
+
+   </LinearLayout>
+
+   <LinearLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_gravity="center_horizontal">
+
+       <Button android:id="@+id/location_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/location_button"
+               android:layout_marginRight="60dp"
+               android:layout_marginTop="20dp"
+               />
+
+       <TextView android:id="@+id/nback_indicator"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/nback_indicator_text"
+                 android:editable="false"
+                 android:layout_marginTop="20dp"/>
+
+        <Button android:id="@+id/audio_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/audio_button"
+               android:layout_marginLeft="60dp"
+               android:layout_marginTop="20dp"
+               />
+
+       </LinearLayout>
+
+   <LinearLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_gravity="center_horizontal">
+
+
+       <Button android:id="@+id/begin_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:text="@string/begin_button"
+               />
+
+   </LinearLayout>
+
+</LinearLayout>
+
+
