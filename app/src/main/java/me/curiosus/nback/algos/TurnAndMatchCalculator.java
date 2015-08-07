@@ -57,8 +57,7 @@ public class TurnAndMatchCalculator {
 		if (matchIndex < nBack) {
 			matchIndex = nBack + 1;
 		}
-		return matchIndex;
-	}
+		return matchIndex;}
 
 	public static void main(String[] args) {
 		TurnAndMatchCalculator turnAndMatchCalculator = new TurnAndMatchCalculator();

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import me.curiosus.nback.algos.TurnAndMatchCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,8 @@ public class MainActivity extends ActionBarActivity {
     private int turnsTaken;
     private boolean locationSelected = false;
     private int locationErrors;
-
+    private TurnAndMatchCalculator turnAndMatchCalculator;
+    private int[] turns;
     private Random random = new Random(System.currentTimeMillis());
     private View[] locations = new View[9];
     private Handler handler = new Handler();
@@ -38,6 +40,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        turnAndMatchCalculator = new TurnAndMatchCalculator();
         beginButton = (Button) findViewById(R.id.begin_button);
         locationButton = (Button) findViewById(R.id.location_btn);
         nBackIndicator = (TextView) findViewById(R.id.nback_indicator);
@@ -81,8 +84,13 @@ public class MainActivity extends ActionBarActivity {
 
     private void takeTurn() {
         if (turnsTaken <= numberOfTurns) {
+
             locationSelected = false;
-            final int locationIndex = random.nextInt(9);
+//            final int locationIndex = random.nextInt(9);
+            if (turns == null || turns.length > 0) {
+                turns = turnAndMatchCalculator.calculateTurns(nBackValue);
+            }
+            final int locationIndex = turns[turnsTaken];
             locationHistory.add(locationIndex);
             final View location = locations[locationIndex];
             location.setBackgroundColor(Color.BLUE);
@@ -106,6 +114,8 @@ public class MainActivity extends ActionBarActivity {
             locationErrors = 0;
             locationSelected = false;
             locationHistory.clear();
+            turns = null;
+
         }
     }
 
@@ -150,12 +160,12 @@ public class MainActivity extends ActionBarActivity {
 						Toast.makeText(MainActivity.this, "Yay", Toast.LENGTH_SHORT).show();
 					} else {
 						locationErrors++;
-						Toast.makeText(MainActivity.this, "Whoops", Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
 					}
 				} else {
 					if (locationSelected) {
 						locationErrors++;
-						Toast.makeText(MainActivity.this, "Whoops", Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
 					}
 				}
 			}
