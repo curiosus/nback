@@ -87,11 +87,6 @@ public class MainActivity extends ActionBarActivity {
             locationSelected = false;
             if (turns == null) {
                 turns = turnAndMatchCalculator.calculateTurns(nBackValue);
-                StringBuilder sb = new StringBuilder();
-                for (int turn : turns) {
-                    sb.append(turn).append(", ");
-                    Toast.makeText(this, sb.toString(), Toast.LENGTH_LONG).show();
-                }
             }
             final int locationIndex = turns[turnsTaken];
             locationHistory.add(locationIndex);
@@ -160,15 +155,15 @@ public class MainActivity extends ActionBarActivity {
 				int nBackLocation = locationHistory.get((locationHistory.size() - 1) - nBackValue);
 				if (nBackLocation == locationIndex) {
 					if (locationSelected) {
-//						Toast.makeText(MainActivity.this, "Yay", Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "Yay", Toast.LENGTH_SHORT).show();
 					} else {
 						locationErrors++;
-//						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
 					}
 				} else {
 					if (locationSelected) {
 						locationErrors++;
-//						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "Boo", Toast.LENGTH_SHORT).show();
 					}
 				}
 			}
